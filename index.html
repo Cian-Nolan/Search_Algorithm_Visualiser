@@ -1,0 +1,619 @@
+<html>
+    <head>
+        <title>Search Visualiser</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="scripts/mainFunction_1.js"></script>
+        <script src="scripts/mainFunction_2.js"></script>
+        <script src="scripts/class_pair.js"></script>
+        <script src="scripts/class_queue.js"></script>
+        <script src="scripts/class_priorityQueue.js"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles/index.css">
+    </head>
+    <body>
+
+        <div id="navigation_bar">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/maze-icon.jpg" id="navBarImage">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Path Visualiser </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About<span class="sr-only">(current)</span></a>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+            <div class="container">
+
+        <!-- User input areas-->
+        <div class="controlContainer">
+
+            <!-- object no. 1 -->
+            <div class="controlGroup1">
+                <form id="marker_start">
+                    <div>
+                        <label class="my-1 mr-2" for="row_start">Start Coordinate: </label>
+                    </div>
+                    
+                    <div class="controlItem1">
+                        <select class="custom-select" id="col_start">
+                            <option value="0 ">0  x</option>
+                            <option value="1 ">1  x</option>
+                            <option value="2 ">2  x</option>
+                            <option value="3 ">3  x</option>
+                            <option value="4 ">4  x</option>
+                            <option value="5 ">5  x</option>
+                            <option value="6 ">6  x</option>
+                            <option value="7 ">7  x</option>
+                            <option value="8 ">8  x</option>
+							<option selected value="9 ">9  x</option>
+                            <option value="10">10 x</option>
+                            <option value="11">11 x</option>
+                            <option value="12">12 x</option>
+                            <option value="13">13 x</option>
+                            <option value="14">14 x</option>
+                            <option value="15">15 x</option>
+                            <option value="16">16 x</option>
+                            <option value="17">17 x</option>
+                            <option value="18">18 x</option>
+                            <option value="19">19 x</option>
+                        </select>
+                    </div>
+
+                    <div class="controlItem1">
+                        <select class="custom-select" id="row_start">
+							<option value="0 ">0  y</option>
+                            <option value="1 ">1  y</option>
+                            <option value="2 ">2  y</option>
+                            <option value="3 ">3  y</option>
+                            <option value="4 ">4  y</option>
+                            <option value="5 ">5  y</option>
+                            <option value="6 ">6  y</option>
+                            <option value="7 ">7  y</option>
+                            <option value="8 ">8  y</option>
+							<option selected value="9 ">9  y</option>
+                            <option value="10">10 y</option>
+                            <option value="11">11 y</option>
+                            <option value="12">12 y</option>
+                            <option value="13">13 y</option>
+                            <option value="14">14 y</option>
+                            <option value="15">15 y</option>
+                            <option value="16">16 y</option>
+                            <option value="17">17 y</option>
+                            <option value="18">18 y</option>
+                            <option value="19">19 y</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <!-- object no. 2 -->
+            <div class="controlGroup1">
+                <form id="marker_end">
+                    <div>
+                        <label class="my-1 mr-2" for="row_end">End Coordinate:</label>
+                    </div>
+                    
+                    <div class="controlItem1">
+                        <select class="custom-select" id="col_end">
+                            <option value="0 ">0  x</option>
+                            <option value="1 ">1  x</option>
+                            <option value="2 ">2  x</option>
+                            <option value="3 ">3  x</option>
+                            <option value="4 ">4  x</option>
+                            <option value="5 ">5  x</option>
+                            <option value="6 ">6  x</option>
+                            <option value="7 ">7  x</option>
+                            <option value="8 ">8  x</option>
+							<option value="9 ">9  x</option>
+                            <option value="10">10 x</option>
+                            <option value="11">11 x</option>
+                            <option value="12">12 x</option>
+                            <option value="13">13 x</option>
+                            <option value="14">14 x</option>
+                            <option value="15">15 x</option>
+                            <option value="16">16 x</option>
+                            <option value="17">17 x</option>
+                            <option value="18">18 x</option>
+                            <option selected value="19">19 x</option>
+                        </select>
+                    </div>
+                    
+                    <div class="controlItem1">
+                        <select class="custom-select" id="row_end">
+							<option value="0 ">0  y</option>
+                            <option value="1 ">1  y</option>
+                            <option value="2 ">2  y</option>
+                            <option value="3 ">3  y</option>
+                            <option value="4 ">4  y</option>
+                            <option value="5 ">5  y</option>
+                            <option value="6 ">6  y</option>
+                            <option value="7 ">7  y</option>
+                            <option value="8 ">8  y</option>
+							<option value="9 ">9  y</option>
+                            <option value="10">10 y</option>
+                            <option value="11">11 y</option>
+                            <option value="12">12 y</option>
+                            <option value="13">13 y</option>
+                            <option value="14">14 y</option>
+                            <option value="15">15 y</option>
+                            <option value="16">16 y</option>
+                            <option value="17">17 y</option>
+                            <option value="18">18 y</option>
+                            <option selected value="19">19 y</option>
+                        </select>        
+                    </div>
+                </form>
+            </div>
+
+            <!-- object no. 3 -->
+            <div class="controlGroup1">
+                <form id="marker_end">
+                    <div>
+                        <label class="my-1 mr-2" for="algo_id">Search Algorithm:</label>
+                    </div>
+                    <div class="controlItem1" id="algo_id">
+                        <select class="custom-select">
+                            <option value="BFS">BFS</option>
+                            <option selected value="Dijkastra">Djikstra</option>
+                        </select>
+                    </div>
+            </div>
+
+            <!-- object no. 4 -->
+            <div class="controlGroup2">
+                <div class="controlContainerVertical " >
+                    <div class="controlContainer controlItem2">
+                        <button type="button" class="btn btn-primary controlItem2" id="solveExecute" > Solve </button>
+                        <button type="button" class="btn btn-primary controlItem2" id="resetExecute"> Reset </button>
+                    </div>
+                    <div class="controlItem2">
+                        <label for="replay_perc">Algorithm Progress:  </label>
+                        <output id="replay_perc_display">100</output> 
+                        <span class="output-group-text"> % </span>
+                        <input type="range" class="form-control-range" min="1" max="100" value="100" id="replay_perc">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="horizontalLine"></div>
+ 
+        <!-- Grid Area -->
+            <div class="grid-container">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                
+            </div>
+    </div>
+
+    </body>
+</html>

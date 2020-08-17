@@ -1,0 +1,151 @@
+.grid-container{
+    display: grid;
+    height: 600px;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(20, 1fr);
+}
+
+.grid-header{
+    display: grid;
+    height: 50px;
+    grid-template-columns: 4fr 2fr 4fr;
+    margin-bottom: 5%;
+}
+
+.cell-header{
+    margin:auto
+}
+
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgrey;
+    background-color: rgb(158, 158, 158, 0.05);
+}
+
+.cell-hover{
+    background-color: rgb(158, 158, 158, 0.1);
+}
+
+.cell-selected{
+    background-color: rgb(158, 158, 158, 0.9);
+}
+
+.cell_active{
+    background-color: yellow;
+    margin: 5%;
+}
+
+.marker_end{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 70%;
+    border-radius: 50%;
+    color: white;
+}
+
+.marker_start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 70%;
+    border-radius: 50%;
+    color: white;
+}
+
+.marker_path{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 10%;
+    border-radius: 50%;
+    color: white;
+}
+
+.controlContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.controlGroup1{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 1%;
+    flex-grow: 0;
+}
+
+.controlGroup2{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    flex-grow: 1;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.controlItem1{
+    margin: 5% 1%;
+}
+
+.controlItem2{
+    margin-left:  2%;
+    margin-right: 2%;
+    margin-top:  2%;
+    margin-bottom: 1%;
+    flex-grow:1;
+}
+
+.controlContainerVertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.horizontalLine{
+    border-bottom: 1px solid lightgrey;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+#navBarImage {
+    height: auto; 
+    width: auto; 
+    max-width: 40px; 
+    max-height: 40px;
+}
+
+.disabledOption{
+    background-color: rgb(158, 158, 158, 0.3);
+}
+
+.instructionImage1 {
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+}
+
+.instructionImage2 {
+    height: auto; 
+    width: auto; 
+    max-width: 150px; 
+    max-height: 150px;
+}
+
+.instructionImage3 {
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+}
+
+.instructionImage4 {
+    height: auto; 
+    width: auto; 
+    max-width: 700px; 
+    max-height: 700px;
+}

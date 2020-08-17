@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Search Visualiser</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles/index.css">
+    </head>
+    <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/maze-icon.jpg" id="navBarImage">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Path Visualiser </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="about.html">About<span class="sr-only">(current)</span></a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class></div>
+        <p> 
+                This tool can be used to visualise the step-by-step process that search algorithms usee to find a 'target' vertex on a graph. The <a href="https://en.wikipedia.org/wiki/Breadth-first_search">Breadth First Search (BFS)</a> and
+                and <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Djikstra's Shortest Path First</a> algorithm are provided as options with this tool.
+        </p>
+        <div class="horizontalLine"></div>
+ 
+        <p>  <i>Step 1:</i> Select a <b>Start Coordinate</b> and <b>End Coordinate</b> from the drop-down menu </p>
+        <img src="images/instructions_1.JPG" class="instructionImage1">
+        <div class="horizontalLine"></div>
+        
+        <p>  <i>Step 2:</i> Select the <b>Search Algorithm</b> from the drop-down menu. Note: Only Djikstra's algorithm will provide the <u>shortest</u> path </p>
+        <img src="images/instructions_2.JPG" class="instructionImage2">
+        <div class="horizontalLine"></div>
+
+        <p>  <i>Step 3:</i>  Click cells on the grid to create a 'walls' that form a maze </p>
+        <div class="horizontalLine"></div>
+
+        <p>  <i>Step 4:</i>  Click the <b>Solve</b> button to find a path from the Start Coordinate to the End Coordinate </p>
+        <img src="images/instructions_3.JPG" class="instructionImage3">
+        <div class="horizontalLine"></div>
+   
+        <p>  <i>Step 5:</i>  Drag the <b>Algorithm Progess</b> slider to shown the step-by-step progress of the algorithm. Your grid should look something like the following: </p>
+        <img src="images/instructions_4.JPG" class="instructionImage4">
+        <div class="horizontalLine"></div>
+
+        <p>  <i>Step 6:</i>  To draw a new maze, just click the or <b>Reset</b> button </p>
+        <div class="horizontalLine"></div>
+
+    </div>
+
+    </body>
+</html>
