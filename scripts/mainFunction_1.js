@@ -183,6 +183,9 @@ $(document).ready(function(e) {
         $(this).toggleClass("cell-hover");
     });
 
+    //dropdown Menu
+    $(".dropdown-toggle").dropdown();
+
  });
 
 
