@@ -46,6 +46,7 @@
 //---------------------------------------------------------------------------------------
 
   // percentage to color - used to display a gradient along the search path as a percentage of red->green
+  // Credit: Michele Locati (mlocati)
   function perc2color(perc) {
     var r, g, b = 0;
     if(perc < 50) {
